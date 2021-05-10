@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container mt-5 ">
+        
+        <div class="card text-white bg-dark mb-3 p-3">
+            <h1 class="card-title">Pythagoras Calculator</h1>
+            <div for="basic-url" class="car-header">Insert your data:</div>
+            <div div class="card-body">
+                <div>
+                    <div class="row input-group mb-3">
+                        <div class ="col">
+                            <label for="basic-url" class="form-label page-subtitle">a</label>
+                            <input type="number" class="form-control" id="oppositeSideA" aria-describedby="basic-addon3">
+                        </div>
+                        <div class ="col">
+                            <label for="basic-url" class="form-label page-subtitle">b</label>
+                            <input type="number" class="form-control" id="oppositeSideB" aria-describedby="basic-addon3">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="row input-group mb-3">
+                        <div class ="col">
+                            <label for="basic-url" class="form-label page-subtitle">c</label>
+                            <input type="number" class="form-control" id="oppositeSideC" aria-describedby="basic-addon3">
+                        </div>
+                        <div class ="col">
+                            <label for="basic-url" class="form-label page-subtitle">Alpha</label>
+                            <input type="number" class="form-control" id="alpha" aria-describedby="basic-addon3">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="row input-group mb-3">
+                        <div class ="col">
+                            <label for="basic-url" class="form-label page-subtitle">Betha</label>
+                            <input type="number" class="form-control" id="betha" aria-describedby="basic-addon3">
+                        </div>
+                        <div class ="col">
+                            <label for="basic-url" class="form-label page-subtitle">Perimeter</label>
+                            <input type="number" class="form-control" id="perimerer" aria-describedby="basic-addon3" disabled>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="row input-group mb-3">
+                        <div class ="col">
+                            <label for="basic-url" class="form-label page-subtitle">Area</label>
+                            <input type="number" class="form-control" id="area" aria-describedby="basic-addon3" disabled>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary mb-3" id="clearButton">Clear</button>
+                <button type="submit" class="btn btn-primary mb-3" id="myBtn">Calcular</button>
+            </div>
+            
+            <h6 class="text-danger" id="errorMessage"></h6>
+        </div>
+        
+    </div>
+    
+    <script
+        type="text/javascript"
+        src="./_js/firstFunction.js">
+    </script>
+    <script
+    type="text/javascript"
+    src="./_js/secondFunction.js">
+    </script>  
+    <script
+    type="text/javascript"
+    src="./_js/thirdFunction.js">
+    </script> 
+     <script
+     type="text/javascript"
+     src="./_js/errorMessage.js">
+     </script> 
+    <script
+    type="text/javascript"
+    src="./_js/clearButton.js">
+</script>
+</body>
+</html>
