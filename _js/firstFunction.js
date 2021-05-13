@@ -6,26 +6,18 @@ var gettingAlpha = "";
 
 document.getElementById('myBtn').addEventListener("click", 
 function firstFunction() { 
+    
     gettingA = document.getElementById('oppositeSideA').value;
-    console.log(gettingA)
-
     gettingB = document.getElementById('oppositeSideB').value;
-    console.log(gettingB)
-
     gettingC = document.getElementById('oppositeSideC').value;
-    console.log(gettingC)
-
     gettingAlpha = document.getElementById('alpha').value;
-    console.log(gettingAlpha)
-
     gettingBetha = document.getElementById('betha').value;
-    console.log(gettingBetha)
 
     const msg = "Pythagoras believes that there is a contradiction with values and here's the reason: valid equation: a² + b² = c² then we have: " + gettingA + "²" + " + " + gettingB + "² " + "= " + gettingC + "²" + " which in this case it's not true." ;
-    const msg1 = "This angle cannot be less than or equal to zero"
+    const msg1 = "This angle cannot be less than or equal to zero or greater than 90°"
     const msg2 = "The sum of the angles cannot be more than 90°";
     const msg3 = "The sum of the angles cannot be less than 90°";
-    const msg4 = "message 4";
+    const msg4 = "Pythagoras believes that there is a contradiction with the inserted angle";
 
     let sumOfAngles = (parseFloat(gettingAlpha) + parseFloat(gettingBetha));
     let resultSumAngles = Math.round(sumOfAngles);
@@ -97,6 +89,7 @@ function firstFunction() {
             document.getElementById('errorMessage').innerHTML = msg4;
 
         } else if (resultSumAngles == 90) { 
+            
             const msg = "";
             const msg1 = "";
             const msg2 = "";
@@ -126,11 +119,15 @@ function firstFunction() {
         let angleAlpha = (57.2958 * (Math.asin((gettingA / gettingC))));
         let alphaFinal = Math.round(angleAlpha)
     
-        if (hypotenuseRound != sumAbRound || gettingAlpha <= 0) {
+        if (hypotenuseRound != sumAbRound || gettingAlpha <= 0 || gettingAlpha >= 90) {
         
             if (gettingAlpha <= 0) {
 
                 document.getElementById('errorMessage').innerHTML = msg1;
+
+            } else if (gettingAlpha <= 0) {
+
+                document.getElementById('errorMessage').innerHTML = msg2;
 
             } else {
                 
@@ -172,7 +169,6 @@ function firstFunction() {
     } else if (gettingA != "" && gettingB != "" && gettingC != "" && gettingAlpha == "" && gettingBetha != "") {
         let angleBetha = (57.2958 * (Math.asin((gettingB / gettingC))));
         let betaFinal = Math.round(angleBetha)
-        console.log("aqui " + betaFinal)
             
         if (hypotenuseRound != sumAbRound || gettingBetha <= 0) {
 
