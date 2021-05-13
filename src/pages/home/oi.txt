@@ -1,0 +1,117 @@
+import { Col, Row, Table, Container, Card, Form, Button} from "react-bootstrap";
+import styled from 'styled-components';
+import React, { useState } from 'react';
+
+
+
+        
+        
+        
+       
+
+
+function Pythagoras() {
+    const [ numberA, setNumberA ] = useState(34);
+    const [ numberB, setNumberB ] = useState(34);
+    const [ numberC, setNumberC ] = useState();
+    const [ numberAlpha, setNumberAlpha ] = useState();
+    const [ numberBetha, setNumberBetha ] = useState();
+    const [ totalA, setTotalA ] = useState(0);
+    const [ totalC, setTotalC ] = useState(0);
+
+    function calculateResult() {
+        /*setTotalA(numberA + numberB)*/
+        if (numberA !== "" && numberB !== "" && setNumberBetha === ""){
+            let powNumbersA = Math.pow(numberA,  2);
+            let powNumbersB = Math.pow(numberB,  2);
+            let resultC = Math.sqrt((powNumbersA+powNumbersB))
+            
+            let sinNumberAlpha = (57.2958 * (Math.asin((numberA / resultC))));
+            let numberBetha = 90 - sinNumberAlpha;
+
+            var periTriangle = parseFloat(numberA ) + parseFloat(numberB) + parseFloat(resultC);
+            var areaTriangle = (numberA * numberB) / 2 ;
+
+            let finalResultC = resultC.toFixed(2);
+            let perimeterNumber = periTriangle.toFixed(2);
+            let areaNumber = areaTriangle.toFixed(2);
+            let Alpha = sinNumberAlpha.toFixed(0);
+            let Betha = numberBetha.toFixed(0);
+            
+            return (  
+            setTotalC(resultC)
+            )
+        }
+    }    
+
+    return (
+        <Container>
+            <Card className="bg-dark text-white">
+                <Card.Header>
+                    <h3>Pythagoras Calculator</h3>
+                </Card.Header>
+                <Card.Body>
+                    <Form>
+                        <Row>
+                            <Col>
+                                <Form.Group>
+                                    <Form.Label>a</Form.Label>
+                                    <Form.Control type="number" value={numberA} onChange={e => setNumberA(+e.target.value)}></Form.Control>
+                                </Form.Group>
+                            </Col>
+                            <Col>
+                                <Form.Group>
+                                    <Form.Label>b</Form.Label>
+                                    <Form.Control type="number" value={numberB} onChange={e => setNumberB(+e.target.value)}></Form.Control>
+                                </Form.Group>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                <Form.Group>
+                                    <Form.Label>c</Form.Label>
+                                    <Form.Control type="number" value={numberC} onChange={e => setNumberC(+e.target.value)}></Form.Control>
+                                </Form.Group>
+                            </Col>
+                            <Col>
+                                <Form.Group>
+                                    <Form.Label>Alpha</Form.Label>
+                                    <Form.Control type="number" value={numberAlpha}></Form.Control>
+                                </Form.Group>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                <Form.Group>
+                                    <Form.Label>Betha</Form.Label>
+                                    <Form.Control type="number" value={numberBetha} onChange={e => setNumberBetha(+e.target.value)}></Form.Control>
+                                </Form.Group>
+                            </Col>
+                            <Col>
+                                <Form.Group>
+                                    <Form.Label>Perimeter</Form.Label>
+                                    <Form.Control type="number" ></Form.Control>
+                                </Form.Group>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col sm={6}>
+                                <Form.Group>
+                                    <Form.Label>Area</Form.Label>
+                                    <Form.Control type="number" ></Form.Control>
+                                </Form.Group>
+                            </Col>
+                        </Row>
+                        
+                        <Button className="mt-5" onClick={calculateResult}>Enter</Button>
+
+                        <h2>{totalC}</h2>
+                        
+                    </Form>
+                </Card.Body>
+            </Card>
+        </Container>
+    )
+};
+
+export default Pythagoras;
